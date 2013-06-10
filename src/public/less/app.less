@@ -1,0 +1,83 @@
+/* Foundation v2.1.4 http://foundation.zurb.com */
+/* Artfully masterminded by ZURB  */
+
+/* -------------------------------------------------- 
+   Table of Contents
+-----------------------------------------------------
+:: Shared Styles
+:: Page Name 1
+:: Page Name 2
+*/
+
+@import "variables.less";
+@import "mixins.less";
+@blue:              #12335F;
+
+/* -----------------------------------------
+   Shared Styles
+----------------------------------------- */
+
+header{
+	background: url("../images/blue-background.png") no-repeat 50% 0 @blue;
+	background-size: cover;
+	padding: 2em;
+	color: #fff;
+	margin-bottom: 1em;
+	.links{
+		margin-bottom: 1em;
+		a{
+			color: rgba(#fff, .8);
+			display: block;
+			width: 50%;
+			float: left;
+			font-family: @serifFontFamily;
+			&:hover{
+				color: #fff;
+			}
+			& + a{
+				text-align: right;
+			}
+		}
+	}
+	.logo{
+		width: 175px;
+		margin: 0 auto 1em;
+		span{
+			display: none;
+		}
+		img{
+			width: 100%;
+		}
+	}
+	.main{
+		text-align: center;
+		h1, h2, h3{
+			color: #fff;
+			margin-top: 0;
+			span{
+				color: lighten(@blue, 50%);
+			}
+		}
+		h2{
+			font-size: 4em;
+		}
+		h3{
+			margin-bottom: 0;
+			font-weight: normal;
+			font-size: 2em;
+		}
+	}
+}
+
+/* -----------------------------------------
+   Page Name 1
+----------------------------------------- */
+
+
+
+
+/* -----------------------------------------
+   Page Name 2
+----------------------------------------- */
+
+

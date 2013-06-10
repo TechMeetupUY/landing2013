@@ -1,0 +1,107 @@
+/* Foundation v2.1.4 http://foundation.zurb.com */
+
+/* Artfully masterminded by ZURB  */
+
+/* -------------------------------------------------- 
+   Table of Contents
+-----------------------------------------------------
+:: Shared Styles
+:: Page Name 1
+:: Page Name 2
+*/
+
+@import url(http://fonts.googleapis.com/css?family=Alef:400,700);
+.clearfix {
+  *zoom: 1;
+}
+.clearfix:before,
+.clearfix:after {
+  display: table;
+  content: "";
+  line-height: 0;
+}
+.clearfix:after {
+  clear: both;
+}
+.hide-text {
+  font: 0/0 a;
+  color: transparent;
+  text-shadow: none;
+  background-color: transparent;
+  border: 0;
+}
+.input-block-level {
+  display: block;
+  width: 100%;
+  min-height: 30px;
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+}
+/* -----------------------------------------
+   Shared Styles
+----------------------------------------- */
+
+header {
+  background: url("../images/blue-background.png") no-repeat 50% 0 #12335f;
+  background-size: cover;
+  padding: 2em;
+  color: white;
+  margin-bottom: 1em;
+}
+header .links {
+  margin-bottom: 1em;
+}
+header .links a {
+  color: rgba(255, 255, 255, 0.8);
+  display: block;
+  width: 50%;
+  float: left;
+  font-family: Georgia, "Times New Roman", Times, serif;
+}
+header .links a:hover {
+  color: white;
+}
+header .links a + a {
+  text-align: right;
+}
+header .logo {
+  width: 175px;
+  margin: 0 auto 1em;
+}
+header .logo span {
+  display: none;
+}
+header .logo img {
+  width: 100%;
+}
+header .main {
+  text-align: center;
+}
+header .main h1,
+header .main h2,
+header .main h3 {
+  color: white;
+  margin-top: 0;
+}
+header .main h1 span,
+header .main h2 span,
+header .main h3 span {
+  color: #88b1e8;
+}
+header .main h2 {
+  font-size: 4em;
+}
+header .main h3 {
+  margin-bottom: 0;
+  font-weight: normal;
+  font-size: 2em;
+}
+/* -----------------------------------------
+   Page Name 1
+----------------------------------------- */
+
+/* -----------------------------------------
+   Page Name 2
+----------------------------------------- */
+
