@@ -43,11 +43,15 @@
 ----------------------------------------- */
 
 header {
+  position: fixed;
+  z-index: 1;
+  width: 100%;
+}
+header div.wrapper {
   background: url("../images/blue-background.png") no-repeat 50% 0 #12335f;
   background-size: cover;
-  padding: 2em;
+  padding: 1em 1em 2em;
   color: white;
-  margin-bottom: 1em;
 }
 header .links {
   margin-bottom: 1em;
@@ -96,6 +100,97 @@ header .main h3 {
   margin-bottom: 0;
   font-weight: normal;
   font-size: 2em;
+}
+header ul.navbar {
+  text-align: center;
+  font-size: 1.5em;
+  background: white;
+  padding: .75em 0;
+  position: relative;
+  list-style: none;
+  margin: 0;
+}
+header ul.navbar li {
+  display: inline;
+}
+header ul.navbar li a {
+  margin: 0 .5em;
+  position: relative;
+  z-index: 1;
+  outline: 0;
+  color: #88b1e8;
+}
+header ul.navbar li a span {
+  margin: 0 1em;
+}
+header ul.navbar li a.inscripciones {
+  color: #e74c3c;
+}
+header ul.navbar li.current a {
+  color: #12335f;
+  text-decoration: none;
+}
+header ul.navbar li.active {
+  height: 2.5em;
+  min-width: 2em;
+  margin-top: -0.1em;
+  border-bottom: 2px solid whitesmoke;
+  float: left;
+  position: absolute;
+  background-color: #fbfbfb;
+  background-image: -moz-linear-gradient(top, white, whitesmoke);
+  background-image: -webkit-gradient(linear, 0 0, 0 100%, from(white), to(whitesmoke));
+  background-image: -webkit-linear-gradient(top, white, whitesmoke);
+  background-image: -o-linear-gradient(top, white, whitesmoke);
+  background-image: linear-gradient(to bottom, white, whitesmoke);
+  background-repeat: repeat-x;
+  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#ffffffff', endColorstr='#fff5f5f5', GradientType=0);
+  -webkit-border-top-right-radius: 4px;
+  -moz-border-radius-topright: 4px;
+  border-top-right-radius: 4px;
+  -webkit-border-top-left-radius: 4px;
+  -moz-border-radius-topleft: 4px;
+  border-top-left-radius: 4px;
+  top: 0;
+  left: -100px;
+  z-index: 0;
+}
+.main_wrapper {
+  *zoom: 1;
+  margin-top: 320px;
+  position: absolute;
+  width: 100%;
+}
+.main_wrapper:before,
+.main_wrapper:after {
+  display: table;
+  content: "";
+  line-height: 0;
+}
+.main_wrapper:after {
+  clear: both;
+}
+.main_wrapper .section {
+  min-height: 500px;
+  padding: 2em 0;
+  background-color: #f9f9f9;
+  background-image: -moz-linear-gradient(top, whitesmoke, white);
+  background-image: -webkit-gradient(linear, 0 0, 0 100%, from(whitesmoke), to(white));
+  background-image: -webkit-linear-gradient(top, whitesmoke, white);
+  background-image: -o-linear-gradient(top, whitesmoke, white);
+  background-image: linear-gradient(to bottom, whitesmoke, white);
+  background-repeat: repeat-x;
+  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#fff5f5f5', endColorstr='#ffffffff', GradientType=0);
+  *zoom: 1;
+}
+.main_wrapper .section:before,
+.main_wrapper .section:after {
+  display: table;
+  content: "";
+  line-height: 0;
+}
+.main_wrapper .section:after {
+  clear: both;
 }
 /* -----------------------------------------
    Page Name 1
