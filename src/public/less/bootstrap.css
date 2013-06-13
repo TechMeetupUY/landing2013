@@ -957,6 +957,7 @@ input[type="color"],
   -moz-transition: border linear .2s, box-shadow linear .2s;
   -o-transition: border linear .2s, box-shadow linear .2s;
   transition: border linear .2s, box-shadow linear .2s;
+  -ms-transition: border linear .2s, box-shadow linear .2s;
 }
 textarea:focus,
 input[type="text"]:focus,
@@ -2632,6 +2633,7 @@ table th[class*="span"],
   -moz-transition: opacity 0.15s linear;
   -o-transition: opacity 0.15s linear;
   transition: opacity 0.15s linear;
+  -ms-transition: opacity 0.15s linear;
 }
 .fade.in {
   opacity: 1;
@@ -2644,6 +2646,7 @@ table th[class*="span"],
   -moz-transition: height 0.35s ease;
   -o-transition: height 0.35s ease;
   transition: height 0.35s ease;
+  -ms-transition: height 0.35s ease;
 }
 .collapse.in {
   height: auto;
@@ -2738,6 +2741,7 @@ button.close {
   -moz-transition: background-position 0.1s linear;
   -o-transition: background-position 0.1s linear;
   transition: background-position 0.1s linear;
+  -ms-transition: background-position 0.1s linear;
 }
 .btn:focus {
   outline: thin dotted #333333;
@@ -4139,6 +4143,7 @@ input[type="submit"].btn.btn-mini {
   -moz-transition: none;
   -o-transition: none;
   transition: none;
+  -ms-transition: none;
 }
 .navbar-inverse .navbar-search .search-query:-moz-placeholder {
   color: #cccccc;
@@ -4440,6 +4445,7 @@ input[type="submit"].btn.btn-mini {
   -moz-transition: opacity .3s linear, top .3s ease-out;
   -o-transition: opacity .3s linear, top .3s ease-out;
   transition: opacity .3s linear, top .3s ease-out;
+  -ms-transition: opacity .3s linear, top .3s ease-out;
   top: -25%;
 }
 .modal.fade.in {
@@ -4736,6 +4742,7 @@ input[type="submit"].btn.btn-mini {
   -moz-transition: all 0.2s ease-in-out;
   -o-transition: all 0.2s ease-in-out;
   transition: all 0.2s ease-in-out;
+  -ms-transition: all 0.2s ease-in-out;
 }
 a.thumbnail:hover,
 a.thumbnail:focus {
@@ -4954,6 +4961,7 @@ a.badge:focus {
   -moz-transition: width 0.6s ease;
   -o-transition: width 0.6s ease;
   transition: width 0.6s ease;
+  -ms-transition: width 0.6s ease;
 }
 .progress .bar + .bar {
   -webkit-box-shadow: inset 1px 0 0 rgba(0,0,0,.15), inset 0 -1px 0 rgba(0,0,0,.15);
@@ -5100,6 +5108,7 @@ a.badge:focus {
   -moz-transition: 0.6s ease-in-out left;
   -o-transition: 0.6s ease-in-out left;
   transition: 0.6s ease-in-out left;
+  -ms-transition: 0.6s ease-in-out left;
 }
 .carousel-inner > .item > img,
 .carousel-inner > .item > a > img {

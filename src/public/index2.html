@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+
+<!-- paulirish.com/2008/conditional-stylesheets-vs-css-hacks-answer-neither/ -->
+<!--[if lt IE 7]> <html class="no-js lt-ie9 lt-ie8 lt-ie7" lang="en"> <![endif]-->
+<!--[if IE 7]>    <html class="no-js lt-ie9 lt-ie8" lang="en"> <![endif]-->
+<!--[if IE 8]>    <html class="no-js lt-ie9" lang="en"> <![endif]-->
+<!--[if gt IE 8]><!--> <html lang="en"> <!--<![endif]-->
+<head>
+    <meta charset="utf-8" />
+
+    <!-- Set the viewport width to device width for mobile -->
+    <meta name="viewport" content="width=device-width" />
+
+    <title>Tech Meetup Uruguay 2013</title>
+    
+    <!-- Included JS Files -->
+    <script type='text/javascript' src='http://ajax.googleapis.com/ajax/libs/jquery/1.8.3/jquery.min.js'></script>
+    <!-- Load ScrollTo -->
+    <script type="text/javascript" src="http://flesler-plugins.googlecode.com/files/jquery.scrollTo-1.4.3.1-min.js"></script>
+   
+    <!-- Included CSS Files -->
+    <link rel="stylesheet" href="less/bootstrap.css">
+    <link rel="stylesheet" href="less/app.css">
+
+
+    <!-- IE Fix for HTML5 Tags -->
+    <!--[if lt IE 9]>
+        <script src="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+    <![endif]-->
+
+    <script type="text/javascript" >
+        $(document).ready(function(){
+
+            $('.navbar a.agenda').click(function() {
+                $(document).scrollTo($("#agenda"), 800, {offset:-320} );
+                return false350            });
+            $('a.noticias').click(function() {
+                $(document).scrollTo($("#noticias"), 800, {offset:-320} );
+                return false;
+            });
+            $('a.oradores').click(function() {
+                $(document).scrollTo($("#oradores"), 800, {offset:-320} );
+                return false;
+            });
+            $('a.sponsors').click(function() {
+                $(document).scrollTo($("#sponsors"), 800, {offset:-320} );
+                return false;
+            });
+            $('a.registro').click(function() {
+                $(document).scrollTo($("#registro"), 800, {offset:-320} );
+                return false;
+            });  
+            $('a.inscripciones').click(function() {
+                $(document).scrollTo($("#inscripciones"), 800, {offset:-320} );
+                return false;
+            });
+
+            //
+            var topMenu = $(".navbar"),
+            topMenuHeight = topMenu.outerHeight()+319,
+            // All list items
+            menuItems = topMenu.find("a"),
+            // Anchors corresponding to menu items
+            scrollItems = menuItems.map(function(){
+                var item = $($(this).attr("href"));
+                if (item.length) { return item; }
+            });
+
+            // Bind to scroll
+            $(window).scroll(function(){
+                // Get container scroll position
+                var fromTop = $(this).scrollTop()+topMenuHeight;
+
+                // Get id of current scroll item
+                var cur = scrollItems.map(function(){
+                if ($(this).offset().top < fromTop)
+                    return this;
+                });
+                // Get the id of the current element
+                cur = cur[cur.length-1];
+                var id = cur && cur.length ? cur[0].id : "";
+                
+                // Set/remove active class
+                menuItems.parent().removeClass("current").end().filter("[href=#"+id+"]").parent().addClass("current");
+
+                //
+                var current = $('li.current');
+                var position = current.offset();   
+                var width = current.width();
+                $('.active').css({"left": position.left, "width": width});
+            
+            });
+
+
+        })
+    </script>
+</head>
+<body>
+<header id="header" >
+    <div class="wrapper clearfix">
+        <div class="links">
+            <a href="mailto:info@meetup.uy">info@meetup.uy</a>
+            <a href="http://twitter.com/meetupUY" title="@meetupUY">@meetupUY</a>
+        </div>
+        <div class="main">
+            <h1 class="logo">
+                <img src="images/meetup-logo.png" alt="Meetup Logo">
+                <span>Tech Meetup 2013</span>
+            </h1>
+            <h2>
+                <span>22</span> | <span>23</span> de Noviembre</h2>
+            <h3>Torre de las Telecomunicaciones de Antel</h3>
+        </div>
+    </div>
+    <ul class="navbar">
+        <li><a href="#agenda" class="agenda"><span>Agenda</span></a></li>
+        <li><a href="#noticias" class="noticias"><span>Noticias</span></a></li>
+        <li><a href="#oradores" class="oradores"><span>Oradores</span></a></li>
+        <li><a href="#sponsors" class="sponsors"><span>Sponsors</span></a></li>
+        <li><a href="#registro" class="registro"><span>Registro</span></a></li>
+        <li><a href="#inscripciones" class="inscripciones"><span>Inscribite</span></a></li>
+        <li class="active"></li>
+    </ul>
+</header><!-- /header -->
+<div class="main_wrapper">
+    <div class="section" id="agenda">
+        <div class="container">
+            agenda
+        </div>
+    </div>
+    <div class="section" id="noticias">
+        <div class="container">
+            noticias
+        </div>
+    </div>
+    <div class="section" id="oradores">
+        <div class="container">
+            oradores
+        </div>
+    </div>
+    <div class="section" id="sponsors">
+        <div class="container">
+            sponsors
+        </div>
+    </div>
+    <div class="section" id="registro">
+        <div class="container">
+            registro
+        </div>
+    </div>
+    <div class="section" id="inscripciones">
+        <div class="container">
+            inscripciones
+        </div>
+    </div>
+</div>
+
+
