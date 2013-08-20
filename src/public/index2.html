@@ -4,7 +4,8 @@
 <!--[if lt IE 7]> <html class="no-js lt-ie9 lt-ie8 lt-ie7" lang="en"> <![endif]-->
 <!--[if IE 7]>    <html class="no-js lt-ie9 lt-ie8" lang="en"> <![endif]-->
 <!--[if IE 8]>    <html class="no-js lt-ie9" lang="en"> <![endif]-->
-<!--[if gt IE 8]><!--> <html lang="en"> <!--<![endif]-->
+<!--[if gt IE 8]>
+<!--> <html lang="en"> <!--<![endif]-->
 <head>
     <meta charset="utf-8" />
 
@@ -31,27 +32,24 @@
     <script type="text/javascript" >
         $(document).ready(function(){
 
-            $('.navbar a.agenda').click(function() {
-                $(document).scrollTo($("#agenda"), 800, {offset:-320} );
-                return false350            });
-            $('a.noticias').click(function() {
-                $(document).scrollTo($("#noticias"), 800, {offset:-320} );
-                return false;
+            $('.navbar a.inicio').click(function() {
+                $(document).scrollTo($("#inicio"), 800, {offset:-320} );
+                return false           
             });
-            $('a.oradores').click(function() {
-                $(document).scrollTo($("#oradores"), 800, {offset:-320} );
+            $('a.rfp').click(function() {
+                $(document).scrollTo($("#rfp"), 800, {offset:-320} );
                 return false;
             });
             $('a.sponsors').click(function() {
                 $(document).scrollTo($("#sponsors"), 800, {offset:-320} );
                 return false;
             });
-            $('a.registro').click(function() {
-                $(document).scrollTo($("#registro"), 800, {offset:-320} );
+            $('a.organizacion').click(function() {
+                $(document).scrollTo($("#organizacion"), 800, {offset:-320} );
                 return false;
             });  
-            $('a.inscripciones').click(function() {
-                $(document).scrollTo($("#inscripciones"), 800, {offset:-320} );
+            $('a.contacto').click(function() {
+                $(document).scrollTo($("#contacto"), 800, {offset:-320} );
                 return false;
             });
 
@@ -96,63 +94,69 @@
     </script>
 </head>
 <body>
-<header id="header" >
-    <div class="wrapper clearfix">
-        <div class="links">
-            <a href="mailto:info@meetup.uy">info@meetup.uy</a>
-            <a href="http://twitter.com/meetupUY" title="@meetupUY">@meetupUY</a>
+    <header id="header" >
+        <div class="wrapper clearfix">
+            <div class="links">
+                <a href="mailto:info@meetup.uy">info@meetup.uy</a>
+                <a href="http://twitter.com/meetupUY" title="@meetupUY">@meetupUY</a>
+            </div>
+            <div class="main">
+                <h1 class="logo">
+                    <img src="images/meetup-logo.png" alt="Meetup Logo">
+                    <span>Tech Meetup 2013</span>
+                </h1>
+                <h2>
+                    <span>22</span> | <span>23</span> de Noviembre</h2>
+                <h3>Torre de las Telecomunicaciones de Antel</h3>
+            </div>
         </div>
-        <div class="main">
-            <h1 class="logo">
-                <img src="images/meetup-logo.png" alt="Meetup Logo">
-                <span>Tech Meetup 2013</span>
-            </h1>
-            <h2>
-                <span>22</span> | <span>23</span> de Noviembre</h2>
-            <h3>Torre de las Telecomunicaciones de Antel</h3>
-        </div>
-    </div>
-    <ul class="navbar">
-        <li><a href="#agenda" class="agenda"><span>Agenda</span></a></li>
-        <li><a href="#noticias" class="noticias"><span>Noticias</span></a></li>
-        <li><a href="#oradores" class="oradores"><span>Oradores</span></a></li>
-        <li><a href="#sponsors" class="sponsors"><span>Sponsors</span></a></li>
-        <li><a href="#registro" class="registro"><span>Registro</span></a></li>
-        <li><a href="#inscripciones" class="inscripciones"><span>Inscribite</span></a></li>
-        <li class="active"></li>
-    </ul>
-</header><!-- /header -->
-<div class="main_wrapper">
-    <div class="section" id="agenda">
-        <div class="container">
-            agenda
-        </div>
-    </div>
-    <div class="section" id="noticias">
-        <div class="container">
-            noticias
-        </div>
-    </div>
-    <div class="section" id="oradores">
-        <div class="container">
-            oradores
-        </div>
-    </div>
-    <div class="section" id="sponsors">
-        <div class="container">
-            sponsors
-        </div>
-    </div>
-    <div class="section" id="registro">
-        <div class="container">
-            registro
-        </div>
-    </div>
-    <div class="section" id="inscripciones">
-        <div class="container">
-            inscripciones
-        </div>
-    </div>
-</div>
+        <ul class="navbar">
+            <li><a href="#inicio" class="inicio"><span>Inicio</span></a></li>
+            <li><a href="#rfp" class="rfp"><span>Presenta tu charla</span></a></li>
+            <li><a href="#sponsors" class="sponsors"><span>Apoyo</span></a></li>
+            <li><a href="#organizacion" class="organizacion"><span>Organización</span></a></li>
+            <li><a href="#contacto" class="contacto"><span>Contacto</span></a></li>
+            <li class="active"></li>
+        </ul>
+    </header><!-- /header -->
 
-
+    <div class="main_wrapper">
+        <div class="section" id="inicio">
+            <div class="container">
+                <div class="container" align="center">
+                <h1>Bienvenido a la segunda edición</h1>
+                <a href="#" class="btn btn-large btn-primary">Envia tu charla</a>
+                <a href="#" class="btn btn-large">Apoya la conferencia</a>
+            </div>
+            </div>
+        </div>
+        <div class="section" id="rfp">
+            <div class="container">
+                <h1>Presenta tu charla</h1>
+            </div>
+        </div>
+        <div class="section" id="sponsors">
+            <div class="container">
+                <h1>Apoya la conferencia</h1>
+                <p>Hola que tal</p>
+            </div>
+        </div>
+        <div class="section" id="organizacion">
+            <div class="container">
+                <h1>Organización</h1>
+            </div>
+        </div>
+        <div class="section" id="contacto">
+            <div class="container">
+                <h1>Contacto</h1>
+            </div>
+        </div>
+        <footer class="footer" id="footer">
+            <div class="container">
+                <p>
+                    &copy; techMeetupUY 2013
+                </p>
+            </div>
+        </footer>
+    </div>
+</body>
