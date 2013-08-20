@@ -200,6 +200,9 @@ header ul.navbar li.active {
     text-align: center;
 }
 
+.p {
+  font-size: 18px;
+}
 /* -----------------------------------------
    Page Name 1
 ----------------------------------------- */
