@@ -192,6 +192,14 @@ header ul.navbar li.active {
 .main_wrapper .section:after {
   clear: both;
 }
+
+.footer {
+    background-color: #F5F5F5;
+    border-top: 1px solid #E5E5E5;
+    padding: 30px 0;
+    text-align: center;
+}
+
 /* -----------------------------------------
    Page Name 1
 ----------------------------------------- */
