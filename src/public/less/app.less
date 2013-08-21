@@ -54,14 +54,17 @@ header{
 			}
 		}
 		h1.logo{
-			width: 175px;
 			margin-bottom: .25em;
+			text-align: right;
 			span{
 				display: none;
 			}
 			img{
-				width: 100%;
+				max-width: 200px;
 			}
+		}
+		h2, h3{
+			text-align: left;
 		}
 		h3{
 			margin-bottom: 0;
@@ -70,7 +73,7 @@ header{
 	}
 	ul.navbar{
 		text-align: center;
-		font-size: 1.5em;
+		font-size: 1.25em;
 		background: #fff;
 		padding: .75em 0;
 		position: relative;
@@ -96,13 +99,14 @@ header{
 				text-decoration: none;
 			}
 			&.active{
-				height: 2.5em;
+				height: 2.75em;
 				margin-top: -.1em;
 				border-bottom: 2px solid #f5f5f5;
 				float: left;
 				position: absolute;
 				.vertical(@startColor: #fff, @endColor: #f5f5f5); 
 				.border-top-radius(@baseBorderRadius);
+				.border-bottom-radius(@baseBorderRadius);
 				top: 0;
 				left: -100px;
 				z-index: 0;
@@ -137,7 +141,6 @@ header{
 
 .main_wrapper{
 	.clearfix();
-	margin-top: 325px;
 	position: absolute;
 	width: 100%;
 	.section{
@@ -197,18 +200,14 @@ ul.contact{
 	}
 }
 
+#contacto{
+	min-height: 30em;
+}
+
 // Media queries
 
 @media only screen and (min-width : 1224px)  {
-
-	.main_wrapper{
-		margin-top: 375px;
-	}
 	#header .main{
-		h1, h2, h3{
-			display: block;
-			float: none;
-		}
 		h2{
 			font-size: 4em;
 			margin-bottom: .5em;
@@ -216,12 +215,19 @@ ul.contact{
 		h3{
 			margin-bottom: 0;
 			font-weight: normal;
-			font-size: 3em;
+			font-size: 2em;
 		}
 		h1.logo{
 			margin-bottom: 1em;
+			img{
+				max-width: 250px;
+			}
 		}
 	}
+	#contacto{
+		min-height: 40em;
+	}
+
 }
 
 

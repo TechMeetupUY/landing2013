@@ -32,7 +32,9 @@
     <script type="text/javascript" >
         $(document).ready(function(){
 
-            var HeaderMargin = $("#header").height() - 6;
+            var HeaderMargin = $("#header").height() - 12;
+
+            $(".main_wrapper").css("margin-top", HeaderMargin+"px");
 
             $('.navbar a.inicio').click(function() {
                 $(document).scrollTo($("#inicio"), 800, {offset:- HeaderMargin} );
@@ -103,12 +105,14 @@
                 <a href="http://twitter.com/meetupUY" title="@meetupUY">@meetupUY</a>
             </div>
             <div class="main container">
-                <h1 class="logo">
+                <h1 class="logo span4">
                     <img src="images/meetup-logo.png" alt="Meetup Logo">
                     <span>Tech Meetup 2013</span>
                 </h1>
-                <h2><span>23</span> de Noviembre</h2>
-                <h3>Torre de las Telecomunicaciones de Antel</h3>
+                <div class="span8">
+                    <h2><span>23</span> de Noviembre</h2>
+                    <h3>Torre de las Telecomunicaciones de Antel</h3>
+                </div>
             </div>
         </div>
         <ul class="navbar">
