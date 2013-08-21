@@ -4,50 +4,268 @@
 <!--[if lt IE 7]> <html class="no-js lt-ie9 lt-ie8 lt-ie7" lang="en"> <![endif]-->
 <!--[if IE 7]>    <html class="no-js lt-ie9 lt-ie8" lang="en"> <![endif]-->
 <!--[if IE 8]>    <html class="no-js lt-ie9" lang="en"> <![endif]-->
-<!--[if gt IE 8]><!--> <html lang="en"> <!--<![endif]-->
+<!--[if gt IE 8]>
+<!--> <html lang="en"> <!--<![endif]-->
 <head>
     <meta charset="utf-8" />
 
     <!-- Set the viewport width to device width for mobile -->
     <meta name="viewport" content="width=device-width" />
 
-    <title>Tech Meetup Uruguay v2013</title>
+    <title>Tech Meetup Uruguay 2013</title>
+    
+    <!-- Included JS Files -->
+    <script type='text/javascript' src='http://ajax.googleapis.com/ajax/libs/jquery/1.8.3/jquery.min.js'></script>
+    <!-- Load ScrollTo -->
+    <script type="text/javascript" src="http://flesler-plugins.googlecode.com/files/jquery.scrollTo-1.4.3.1-min.js"></script>
    
     <!-- Included CSS Files -->
     <link rel="stylesheet" href="less/bootstrap.css">
     <link rel="stylesheet" href="less/app.css">
+
+
     <!-- IE Fix for HTML5 Tags -->
     <!--[if lt IE 9]>
         <script src="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script>
     <![endif]-->
+
+    <script type="text/javascript" >
+        $(document).ready(function(){
+
+            var HeaderMargin = $("#header").height() - 6;
+
+            $('.navbar a.inicio').click(function() {
+                $(document).scrollTo($("#inicio"), 800, {offset:- HeaderMargin} );
+                return false           
+            });
+            $('a.rfp').click(function() {
+                $(document).scrollTo($("#rfp"), 800, {offset:- HeaderMargin} );
+                return false;
+            });
+            $('a.sponsors').click(function() {
+                $(document).scrollTo($("#sponsors"), 800, {offset:- HeaderMargin} );
+                return false;
+            });
+            $('a.organizacion').click(function() {
+                $(document).scrollTo($("#organizacion"), 800, {offset:- HeaderMargin} );
+                return false;
+            });  
+            $('a.contacto').click(function() {
+                $(document).scrollTo($("#contacto"), 800, {offset:- HeaderMargin} );
+                return false;
+            });
+
+            //
+            var topMenu = $(".navbar"),
+            topMenuHeight = topMenu.outerHeight()+319,
+            // All list items
+            menuItems = topMenu.find("a"),
+            // Anchors corresponding to menu items
+            scrollItems = menuItems.map(function(){
+                var item = $($(this).attr("href"));
+                if (item.length) { return item; }
+            });
+
+            // Bind to scroll
+            $(window).scroll(function(){
+                // Get container scroll position
+                var fromTop = $(this).scrollTop()+topMenuHeight;
+
+                // Get id of current scroll item
+                var cur = scrollItems.map(function(){
+                if ($(this).offset().top < fromTop)
+                    return this;
+                });
+                // Get the id of the current element
+                cur = cur[cur.length-1];
+                var id = cur && cur.length ? cur[0].id : "";
+                
+                // Set/remove active class
+                menuItems.parent().removeClass("current").end().filter("[href=#"+id+"]").parent().addClass("current");
+
+                //
+                var current = $('li.current');
+                var position = current.offset();   
+                var width = current.width();
+                $('.active').css({"left": position.left, "width": width});
+            
+            });
+
+
+        })
+    </script>
 </head>
 <body>
-	<header id="header" >
-	    <div class="wrapper clearfix">
-	        <div class="links">
-	            <a href="mailto:info@meetup.uy">info@meetup.uy</a>
-	            <a href="http://twitter.com/meetupUY" title="@meetupUY">@meetupUY</a>
-	        </div>
-	        <div class="main">
-	            <h1 class="logo">
-	                <img src="images/meetup-logo.png" alt="Meetup Logo">
-	                <span>Tech Meetup 2013</span>
-	            </h1>
-	            <h2>
-	                <span>22</span> | <span>23</span> de Noviembre</h2>
-	            <h3>Torre de las Telecomunicaciones de Antel</h3>
-	        </div>
-	    </div>
+    <header id="header" >
+        <div class="wrapper clearfix">
+            <div class="links">
+                <a href="mailto:info@meetup.uy">info@meetup.uy</a>
+                <a href="http://twitter.com/meetupUY" title="@meetupUY">@meetupUY</a>
+            </div>
+            <div class="main container">
+                <h1 class="logo">
+                    <img src="images/meetup-logo.png" alt="Meetup Logo">
+                    <span>Tech Meetup 2013</span>
+                </h1>
+                <h2><span>23</span> de Noviembre</h2>
+                <h3>Torre de las Telecomunicaciones de Antel</h3>
+            </div>
+        </div>
+        <ul class="navbar">
+            <li><a href="#inicio" class="inicio"><span>Inicio</span></a></li>
+            <li><a href="#rfp" class="rfp"><span>Presenta tu charla</span></a></li>
+            <li><a href="#sponsors" class="sponsors"><span>Apoyo</span></a></li>
+            <li><a href="#organizacion" class="organizacion"><span>Organización</span></a></li>
+            <li><a href="#contacto" class="contacto"><span>Contacto</span></a></li>
+            <li class="active"></li>
+        </ul>
+    </header><!-- /header -->
 
-	</header><!-- /header -->
-	<div class="main_wrapper">
-	    <div class="section">
-	        <div class="container" align="center">
-	        	<h1>Bienvenido a la segunda edición</h1>
-	            <a href="#" class="btn btn-large btn-primary">Envia tu charla</a>
-	            <a href="#" class="btn btn-large">Apoya la conferencia</a>
-	        </div>
-	    </div>
-	</div>
+    <div class="main_wrapper">
+        <div class="section" id="inicio">
+            <div class="container">
+                <div class="offset1 span10">
+                    <h1>techMeetup UY es una conferencia anual creada <strong>para y por desarrolladores</strong> de Uruguay.</h1>
+                    <h2>Tiene 3 objetivos principales:</h2>
+                     <ul>
+                         <li>Potenciar comunidades locales.</li>
+                         <li>Impulsar a los estudiantes de IT.</li>
+                         <li>Ofrecer un día de actualización profesional y networking de la más alta calidad.</li>
+                     </ul>  
+                    </p>
+                    <p>
+                    Está dirigida a todo el sector IT de Uruguay: CTOs, IT Managers, responsables de IT, estudiantes y todos los profesionales IT.</p>
+                    <p>
+                        <a href="#rfp" class="rfp btn btn-large btn-primary">Envia tu charla</a>
+                        <a href="#sponsors" class="sponsors btn btn-large">Apoya la conferencia</a>
+                    </p>
+            </div>
+            </div>
+        </div>
+        <div class="section" id="rfp">
+            <div class="container">
+                <div class="offset1 span10">
+                    <h2>Presenta tu charla</h2>
+                    <p>
+                        ¿Tenés algo interesante para contar?.
+                        Con 30 minutos para presentar tus ideas, este evento será muy intenso y dinámico. ¡Preparate para mostrar lo que más te interesa! Contanos quién sos, qué hacés y la importancia de tu ponencia.
+                    </p>
+                    <p>
+                        Todos tienen la oportunidad de presentarse por igual, porque entendemos que sin ideas nuevas no hay desarrollo.
+                    </p>
+                    <p>
+                        <a href="https://docs.google.com/a/centra.com.uy/spreadsheet/viewform?formkey=dEhTbFJPc3NrODV3VkR1dVhJUWRMQmc6MA#gid=0" class="btn btn-large btn-primary" target="_blank">Mandanos tu paper completando el siguiente formulario.</a>
+                    </p>
+                </div>
+            </div>
+        </div>
+        <div class="section" id="sponsors">
+            <div class="container">
+                <div class="container">
+                    <div class="offset1 span10">
+                        <h2>Apoya la conferencia</h2>
+                        <p>techMeetup UY es una conferencia <strong>sin fines de lucro</strong>. Todos los fondos recaudados son utilizados en su totalidad en la organización de la conferencia siendo proporcionados por empresas que creen firmemente en este tipo de eventos.
+                        </p>
+                        <h5>
+                            <a href="http://tech.meetup.uy/v2012" alt="Empresas que nos apoyaron en el 2012" target="_blank"> Más de <strong>20 empresas</strong> apoyaron este proyecto en la edición anterior <i class="icon-remove"></i></a>.
+                        </h5>
+                        <div class="well">
+
+                                <p>Podés apoyar la conferencia aportando USD 700 (más impuestos). Si tenés alguna idea u otra forma de apoyar mandanos un correo, tenemos flexibilidad y podemos trabajar con ustedes para diseñar un paquete adecuado.</p>
+
+                                <h4 class="price">U$D 700 <small>+ imp</small></h4>
+                                <hr>
+                                <ul class="unstyled">
+                                    <li>6 Entradas a la conferencia.</li>
+                                    <li>Logo en la web.</li>
+                                    <li>Tu roll-up banner en el hall mientras dure la conferencia.</li>
+                                    <li>Menciones durante la conferencia.</li>
+                                    <li>Agradecimiento de toda la comunidad IT.</li>
+                                    <li class="divider"></li>
+                                </ul>
+                                    
+                                <a href="mailto:info@meetup.uy?subject=MeetupUy 2013 Apoyo" class="btn btn-large">Quiero apoyar!<br>info@meetup.uy</a>
+
+                        </div>
+                    
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="section" id="organizacion">
+            <div class="container">
+                <h2>Nuestro equipo</h2>
+                <ul class="thumbnails">
+                    <li class="span4">
+                        <img src="./images/org/nicolasb.jpg" class="img-circle">
+                        <div class="caption">
+                            <h3>Nicolás Bianchi</h3>
+                            <p>Cras justo odio, dapibus ac facilisis in, egestas eget quam. Donec id elit non mi porta gravida at eget metus. Nullam id dolor id nibh ultricies vehicula ut id elit.</p>
+                            <p>
+                                <a href="https://twitter.com/nicobf">@nicobf</a>
+                            </p>
+                        </div>
+                    </li>
+                    <li class="span4">
+                        <img src="./images/org/martinc.jpg" class="img-circle">
+                        <div class="caption">
+                            <h3>Martín Cabrera</h3>
+                            <p>Cras justo odio, dapibus ac facilisis in, egestas eget quam. Donec id elit non mi porta gravida at eget metus. Nullam id dolor id nibh ultricies vehicula ut id elit.</p>
+                            <p>
+                                <a href="https://twitter.com/murtun">@murtun</a>
+                            </p>
+                        </div>
+                    </li>
+                    <li class="span4">
+                        <img src="./images/org/martin_loy.jpg" class="img-circle">
+                        <div class="caption">
+                            <h3>Martín Loy</h3>
+                            <p>Cras justo odio, dapibus ac facilisis in, egestas eget quam. Donec id elit non mi porta gravida at eget metus. Nullam id dolor id nibh ultricies vehicula ut id elit.</p>
+                            <p>
+                                <a href="https://twitter.com/martinloy">@martinloy</a>
+                            </p>
+                        </div>
+                    </li>
+                    <li class="span4">
+                        <img src="./images/org/nacho_nin.jpg" class="img-circle">
+                        <div class="caption">
+                            <h3>Ignacio Nin</h3>
+                            <p>Cras justo odio, dapibus ac facilisis in, egestas eget quam. Donec id elit non mi porta gravida at eget metus. Nullam id dolor id nibh ultricies vehicula ut id elit.</p>
+                            <p>
+                                <a href="https://twitter.com/nachexnachex">@nachexnachex</a>
+                            </p>
+                        </div>
+                    </li>
+                    <li class="span4">
+                        <img src="./images/org/diego_sapriza.jpg" class="img-circle">
+                        <div class="caption">
+                            <h3>Diego Sapriza</h3>
+                            <p>
+                                Senior Software Engineer para Case Design Inc. Co-organizador de varias meetups: PHPmvd, DevOps, AgileUY. 
+                            </p>
+                            <p>
+                                <a href="https://twitter.com/AV4TAr">@AV4TAr</a>
+                            </p>
+                        </div>
+                    </li>
+                </ul>
+            </div>
+        </div>
+        <div class="section" id="contacto">
+            <div class="container">
+                <h2 class="text-center">Contacto</h2>
+                <ul class="contact">
+                    <li>Información general: <br><a href="mailto:info@meetup.uy">info@meetup.uy</a></li>
+                    <li>Organización: <br><a href="mailto:organizacion@meetup.uy">organizacion@meetup.uy</a></li>
+                    <li>Teléfono: <br>+598 2 908 6408</li>
+            </div>
+        </div>
+        <footer class="footer" id="footer">
+            <div class="container">
+                <p>
+                    &copy; techMeetupUY 2013
+                </p>
+            </div>
+        </footer>
+    </div>
 </body>
-</html>
