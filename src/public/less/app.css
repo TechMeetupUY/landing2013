@@ -196,6 +196,7 @@ header ul.navbar li.active {
 }
 #prev_edition span {
   margin-top: 1em;
+  display: block;
 }
 .main_wrapper {
   *zoom: 1;
