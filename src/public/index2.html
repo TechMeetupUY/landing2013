@@ -32,24 +32,26 @@
     <script type="text/javascript" >
         $(document).ready(function(){
 
+            var HeaderMargin = $("#header").height() - 6;
+
             $('.navbar a.inicio').click(function() {
-                $(document).scrollTo($("#inicio"), 800, {offset:-320} );
+                $(document).scrollTo($("#inicio"), 800, {offset:- HeaderMargin} );
                 return false           
             });
             $('a.rfp').click(function() {
-                $(document).scrollTo($("#rfp"), 800, {offset:-320} );
+                $(document).scrollTo($("#rfp"), 800, {offset:- HeaderMargin} );
                 return false;
             });
             $('a.sponsors').click(function() {
-                $(document).scrollTo($("#sponsors"), 800, {offset:-320} );
+                $(document).scrollTo($("#sponsors"), 800, {offset:- HeaderMargin} );
                 return false;
             });
             $('a.organizacion').click(function() {
-                $(document).scrollTo($("#organizacion"), 800, {offset:-320} );
+                $(document).scrollTo($("#organizacion"), 800, {offset:- HeaderMargin} );
                 return false;
             });  
             $('a.contacto').click(function() {
-                $(document).scrollTo($("#contacto"), 800, {offset:-320} );
+                $(document).scrollTo($("#contacto"), 800, {offset:- HeaderMargin} );
                 return false;
             });
 

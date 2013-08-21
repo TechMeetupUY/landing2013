@@ -119,13 +119,10 @@ header{
 	margin-top: 325px;
 	position: absolute;
 	width: 100%;
-	.min{
-		//section-height: 500px;
-		padding: 2em 0;
+	.section{
 		.vertical(@startColor: #f5f5f5, @endColor: #fff); 
 		.clearfix();
-		&#agenda{
-		}
+		padding-top: 2em;
 	}
 }
 
@@ -171,10 +168,10 @@ ul.contact{
 
 @media only screen and (min-width : 1224px)  {
 
+	.main_wrapper{
+		margin-top: 375px;
+	}
 	#header .main{
-		.main_wrapper{
-			margin-top: 375px;
-		}
 		h1, h2, h3{
 			display: block;
 			float: none;
