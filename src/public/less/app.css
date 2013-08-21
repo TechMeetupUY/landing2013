@@ -184,14 +184,18 @@ header ul.navbar li.active {
   width: 5em;
   top: 380px;
   padding: .5em;
-  -webkit-border-radius: 3px;
-  -moz-border-radius: 3px;
-  border-radius: 3px;
+  -webkit-border-radius: 999em;
+  -moz-border-radius: 999em;
+  border-radius: 999em;
   margin-left: 1em;
   text-align: center;
   -webkit-box-shadow: inset 0 0 1em #12335f;
   -moz-box-shadow: inset 0 0 1em #12335f;
   box-shadow: inset 0 0 1em #12335f;
+  height: 5em;
+}
+#prev_edition span {
+  margin-top: 1em;
 }
 .main_wrapper {
   *zoom: 1;
