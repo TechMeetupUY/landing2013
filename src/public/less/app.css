@@ -171,7 +171,7 @@ header ul.navbar li.active {
 }
 .main_wrapper {
   *zoom: 1;
-  margin-top: 320px;
+  margin-top: 325px;
   position: absolute;
   width: 100%;
 }
@@ -251,6 +251,9 @@ ul.contact li {
   margin: 0 1em;
 }
 @media only screen and (min-width: 1224px) {
+  #header .main .main_wrapper {
+    margin-top: 375px;
+  }
   #header .main h1,
   #header .main h2,
   #header .main h3 {
