@@ -51,6 +51,16 @@ header div.wrapper {
 }
 header .links {
   margin-bottom: 1em;
+  *zoom: 1;
+}
+header .links:before,
+header .links:after {
+  display: table;
+  content: "";
+  line-height: 0;
+}
+header .links:after {
+  clear: both;
 }
 header .links a {
   color: rgba(255, 255, 255, 0.8);
@@ -65,16 +75,6 @@ header .links a:hover {
 header .links a + a {
   text-align: right;
 }
-header .logo {
-  width: 175px;
-  margin: 0 auto 1em;
-}
-header .logo span {
-  display: none;
-}
-header .logo img {
-  width: 100%;
-}
 header .main {
   text-align: center;
 }
@@ -82,20 +82,26 @@ header .main h1,
 header .main h2,
 header .main h3 {
   color: #fff;
-  margin-top: 0;
+  margin: 0 auto;
 }
 header .main h1 span,
 header .main h2 span,
 header .main h3 span {
   color: #88b1e8;
 }
-header .main h2 {
-  font-size: 4em;
+header .main h1.logo {
+  width: 175px;
+  margin-bottom: .25em;
+}
+header .main h1.logo span {
+  display: none;
+}
+header .main h1.logo img {
+  width: 100%;
 }
 header .main h3 {
   margin-bottom: 0;
   font-weight: normal;
-  font-size: 2em;
 }
 header ul.navbar {
   text-align: center;
@@ -178,7 +184,7 @@ header ul.navbar li.active {
 .main_wrapper:after {
   clear: both;
 }
-.main_wrapper .section {
+.main_wrapper .min {
   padding: 2em 0;
   background-color: #f9f9f9;
   background-image: -moz-linear-gradient(top, #f5f5f5, #ffffff);
@@ -190,13 +196,13 @@ header ul.navbar li.active {
   filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#fff5f5f5', endColorstr='#ffffffff', GradientType=0);
   *zoom: 1;
 }
-.main_wrapper .section:before,
-.main_wrapper .section:after {
+.main_wrapper .min:before,
+.main_wrapper .min:after {
   display: table;
   content: "";
   line-height: 0;
 }
-.main_wrapper .section:after {
+.main_wrapper .min:after {
   clear: both;
 }
 .footer {
@@ -244,9 +250,23 @@ ul.contact li {
   display: inline-block;
   margin: 0 1em;
 }
-/* -----------------------------------------
-   Page Name 1
------------------------------------------ */
-/* -----------------------------------------
-   Page Name 2
------------------------------------------ */
+@media only screen and (min-width: 1224px) {
+  #header .main h1,
+  #header .main h2,
+  #header .main h3 {
+    display: block;
+    float: none;
+  }
+  #header .main h2 {
+    font-size: 4em;
+    margin-bottom: .5em;
+  }
+  #header .main h3 {
+    margin-bottom: 0;
+    font-weight: normal;
+    font-size: 3em;
+  }
+  #header .main h1.logo {
+    margin-bottom: 1em;
+  }
+}
