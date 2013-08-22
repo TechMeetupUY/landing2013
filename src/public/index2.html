@@ -32,34 +32,48 @@
     <script type="text/javascript" >
         $(document).ready(function(){
 
-            var HeaderMargin = $("#header").height() - 12;
+            function getHeaderMargin(fixedheight) {
+                headerHeight = $("#header").height();
+                if(fixedheight !== undefined) {
+                    return fixedheight - 12;
+                }
+                return $("#header").height() - 12;;
+            }
 
-            $(".main_wrapper").css("margin-top", HeaderMargin+"px");
+            $(".main_wrapper").css("margin-top", getHeaderMargin()+"px");
 
             $('.navbar a.inicio').click(function() {
-                $(document).scrollTo($("#inicio"), 800, {offset:- HeaderMargin} );
-                return false           
+                $(document).scrollTo($("#inicio"), 800, {offset:- getHeaderMargin()} );
+                return false;           
             });
             $('a.rfp').click(function() {
-                $(document).scrollTo($("#rfp"), 800, {offset:- HeaderMargin} );
+                $(document).scrollTo($("#rfp"), 800, {offset:- getHeaderMargin(153)} );
                 return false;
             });
             $('a.sponsors').click(function() {
-                $(document).scrollTo($("#sponsors"), 800, {offset:- HeaderMargin} );
+                $(document).scrollTo($("#sponsors"), 800, {offset:- getHeaderMargin()} );
                 return false;
             });
             $('a.organizacion').click(function() {
-                $(document).scrollTo($("#organizacion"), 800, {offset:- HeaderMargin} );
+                $(document).scrollTo($("#organizacion"), 800, {offset:- getHeaderMargin()} );
                 return false;
             });  
             $('a.contacto').click(function() {
-                $(document).scrollTo($("#contacto"), 800, {offset:- HeaderMargin} );
+                $(document).scrollTo($("#contacto"), 800, {offset:- getHeaderMargin()} );
                 return false;
             });
 
+            function getTopMenuHeight() {
+                auxVal = 319;
+                if($('#header').hasClass('shrinked')) {
+                    auxVal = auxVal - 209;
+                }
+                return $(".navbar").outerHeight()+auxVal;
+            }    
+
             //
             var topMenu = $(".navbar"),
-            topMenuHeight = topMenu.outerHeight()+319,
+            topMenuHeight = getTopMenuHeight(),
             // All list items
             menuItems = topMenu.find("a"),
             // Anchors corresponding to menu items
@@ -68,10 +82,55 @@
                 if (item.length) { return item; }
             });
 
+            $('#inicio').waypoint(function(direction) {
+                if(direction === 'down') {
+                    $('#header .main h3').fadeOut('fast', function() {
+                        $('.logo img').animate( {
+                        width: '100px'
+                        });
+                        $('#header .main h1.logo').animate( {
+                            marginBottom: 0
+                        });
+                        $('#header .main h2').animate( {
+                            fontSize:'2.5em',
+                            marginBottom: 0
+                        });
+                        $('.links').animate( {
+                            marginBottom: 0
+                        });
+                    });
+
+                    $("#header").addClass('shrinked');
+                }
+
+                if(direction === 'up') {
+                    $('.links').animate( {
+                        marginBottom: '1em'
+                    });
+                    $('#header .main h2').animate( {
+                        fontSize:'4em',
+                        marginBottom: '0.5em'
+                    });
+                    $('#header .main h1.logo').animate( {
+                        marginBottom: '1em'
+                    });
+                    $('.logo img').animate( {
+                        width: '250px'
+                    }, function() {
+                        $('#header .main h3').fadeIn('fast');
+                    } );
+
+                    $("#header").removeClass('shrinked');
+                }
+
+                HeaderMargin = $("#header").height() - 12;
+            }, { offset: 215 });
+
             // Bind to scroll
             $(window).scroll(function(){
+
                 // Get container scroll position
-                var fromTop = $(this).scrollTop()+topMenuHeight;
+                var fromTop = $(this).scrollTop()+getTopMenuHeight();
 
                 // Get id of current scroll item
                 var cur = scrollItems.map(function(){
@@ -89,8 +148,9 @@
                 var current = $('li.current');
                 var position = current.offset();   
                 var width = current.width();
-                $('.active').css({"left": position.left, "width": width});
-            
+                try {
+                    $('.active').css({"left": position.left, "width": width});
+                } catch(e) {}
             });
 
 
@@ -290,6 +350,7 @@
         </footer>
     </div>
 
+    <script src="js/waypoints.min.js"></script>
     <script type="text/javascript">
 
   var _gaq = _gaq || [];
