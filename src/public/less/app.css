@@ -324,3 +324,8 @@ ul.contact li {
     min-height: 40em;
   }
 }
+a.float-right {
+  float: right !important;
+  padding: 0 5px;
+  width: auto !important;
+}
